@@ -1,4 +1,5 @@
 import { ResourceLoader } from "./js/base/ResourceLoader.js";
+import { DataStore } from "./js/base/DataStore.js";
 
 export class Main{
   constructor(){
@@ -7,7 +8,9 @@ export class Main{
     this.canvas = document.getElementById('game');
     this.ctx = this.canvas.getContext('2d');
     // 初始化资源加载器
-    // this.loader = new ResourceLoader();
+    this.loader = new ResourceLoader();
+
+    this.dataStore = DataStore.getInstance();
     // console.log(this.loader);
     // let bg = this.loader.map.get('background');
     // bg.onload=()=>{
