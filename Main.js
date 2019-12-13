@@ -21,6 +21,6 @@ export class Main{
 
   //定义资源加载成功以后调用的方法
   onResourcesLoaded(map){
-    console.log(map);
+    this.dataStore.map=map;
   }
 }
