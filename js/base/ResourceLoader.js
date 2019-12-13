@@ -14,6 +14,17 @@ export class ResourceLoader{
       image.src=val
       this.map.set(key,image);//替换原来的值
     }
-    
+  }
+  
+  onLoaded(callback){
+    let count = 0;//计数器
+    for(let val of this.map.values()){
+      val.onload=()=>{
+        count++;
+        if(count>=this.map.size){
+          callback(this.map);
+        }
+      }
+    }
   }
 }
